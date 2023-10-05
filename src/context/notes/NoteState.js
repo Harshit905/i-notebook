@@ -38,16 +38,8 @@ const getNotes = async () => {
       },
       body: JSON.stringify({title, description, tag})
     });
-    const json = await response.json(); 
-    const note = {
-      "_id": "61322f1195jhgj53781a8ca8d0e08",
-      "user": "6131dc5e3e4037cd4734a0664",
-      "title": title,
-      "description": description,
-      "tag": tag,
-      "date": "2021-09-03T14:20:09.6687",
-      "v": 0
-    };
+   
+    const note =  await response.json(); 
   setNotes(notes.concat(note))
 
   }
@@ -90,6 +82,7 @@ const getNotes = async () => {
         newNotes[index].tag = tag; 
         break; 
       }
+      setNotes(newNotes)
     }  
   }
 

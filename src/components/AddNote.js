@@ -8,7 +8,7 @@ const AddNote = () => {
     const handleClick = (e)=>{
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
-        setNote({title: "", description: "", tag: ""})
+        setNote({title: "", description: "", tag: ""});
     }
 
     const onChange = (e)=>{
@@ -41,20 +41,18 @@ const AddNote = () => {
           <form id="noteForm">
             <div className="form-group">
                 <label htmlFor="title">Title:</label>
-                <input type="text" id="title" name="title" required onChange={onChange}/>
+                <input type="text" id="title" name="title" required value={note.title} onChange={onChange} minLength={5} />
             </div>
             <div className="form-group">
                 <label htmlFor="description">Description:</label>
-                <textarea  id="description" name="description" rows="4" required onChange={onChange}></textarea>
+                <textarea  id="description" name="description" rows="4" value={note.description} required onChange={onChange} minLength={5} ></textarea>
             </div>
-            <div className="form-group">
+            <div className="form-group" >
                 <label>Tags:</label>
-                <div className="tags" id="tags">
-                </div>
-                <input type="text" id="tagInput" placeholder="Add a tag"/>
-                {/* <button type="button" id="addTag" className="add-tag">Add Tag</button> */}
+                <input type="text" id="tag" name='tag' value={note.tag} onChange={onChange}   placeholder="Add a tag" minLength={5} />
+              
             </div>
-            <button type="submit" onClick={handleClick}>Save Note</button>
+            <button disabled={note.title.length<5 || note.description.length<5} type="submit" onClick={handleClick}>Save Note</button>
         </form>
         </div>
 

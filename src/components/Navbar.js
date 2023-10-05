@@ -25,14 +25,17 @@ const Navbar = () => {
         <div className="navbar-area">
           <div className="container-fluid">
             <nav className={`site-navbar ${isNavOpen ? 'nav-open' : ''}`}>
-              <a to="/" className="site-logo">i-Notebook</a>
+              <Link to="/" className="site-logo">i-Notebook</Link>
               <ul className={`site-nav ${isNavOpen ? 'open' : ''}`}>
                 <li><Link to="/" className={`${location.pathname==="/"?"active-nav":""}`} ><i className="fa-solid fa-house-user"></i>  Home</Link></li>
                 <li><Link  to="/about" className={`${location.pathname==="/about"?"active-nav":""}`}><i className="fa fa-file" ></i>  About</Link></li>
                 <li><Link  to="/service" className={`${location.pathname==="/service"?"active-nav":""}`}><i className="fa fa-cogs" ></i>  Service</Link></li>
                 <li><Link  to="/contact" className={`${location.pathname==="/contact"?"active-nav":""}`}><i className="fa fa-envelope" ></i>  Contact</Link></li>
-                <li><Link  to="/login" className={`${location.pathname==="/login"?"active-nav":""}`}><i className="fa fa-sign-in" ></i> Login</Link></li>
               </ul>
+              <form className='d-flex mx-2'>
+                <Link   to="/login" className="mx-1"><i className="fa fa-sign-in"></i>Login</Link>
+                <Link  to="/signup" className="mx-1"><i className="fa-solid fa-user-plus"></i>&nbsp;SignUp</Link>
+                </form>
               <button className={`nav-toggler ${isNavOpen ? 'toggler-open' : ''}`} onClick={togglerClick}>
                 <span></span>
               </button>

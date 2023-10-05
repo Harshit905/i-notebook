@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
 .p_login{
     text-align: center;
 }
@@ -15,7 +16,7 @@ margin: 0 auto;
 }
 
  
-input[type=email], input[type=password],input[type=name]{
+#em, input[type=password],input[type=name]{
   padding: 0 3%;
   width: 70%;
   height: 40px;
@@ -60,4 +61,9 @@ input[type=email], input[type=password],input[type=name]{
     width: 50%;
     height:50%;
     margin-left:25%;
+}
+
+/* heading style */
+.style_heading{
+    
 }

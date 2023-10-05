@@ -67,13 +67,16 @@ function App() {
         <Alert alert={alert}/>
         <div className='container-fluid'>
         <Switch>
-          <Route exact path="/" showAlert={showAlert}  component={Home}/>
+          {/* <Route exact path="/" showAlert={showAlert}  component={Home}/> */}
+          <Route exact path="/" render={() => <Home showAlert={showAlert} />} />
           <Route exact path="/about" component={About}/>
           {/* <Route exact path="/services" component={Services}/> */}
           <Route exact path="/contact" component={Contact}/>
-          <Route exact path="/login" showAlert={showAlert}  component={Login}/>
-          <Route exact path="/signup" showAlert={showAlert} component={Signup}/>
+          {/* <Route exact path="/login" showAlert={showAlert}  component={Login}/> */}
+          {/* <Route exact path="/signup" showAlert={showAlert} component={Signup}/> */}
           
+           <Route exact path="/login" render={() => <Login showAlert={showAlert} />} />
+            <Route exact path="/signup" render={() => <Signup showAlert={showAlert} />} />
         </Switch>
         </div>
     </Router>

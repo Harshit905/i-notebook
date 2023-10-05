@@ -13,7 +13,7 @@ const NoteItem = (props) => {
                     <div className="note-icons">
                         <i className="fas fa-edit" onClick={()=>{updateNote(note)}}></i>
                         {/* <i className="fas fa-edit" onClick={onEditClick}></i> */}
-                        <i className="fas fa-trash-alt" onClick={()=>(deleteNote(note._id))}></i>
+                        <i className="fas fa-trash-alt" onClick={()=>{deleteNote(note._id);props.showAlert("Note Deleted","success")}}></i>
                         {/* <i className="fas fa-trash-alt" onClick={onDeleteClick}></i> */}
                     </div>
                 </div>
